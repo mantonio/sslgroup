@@ -80,11 +80,9 @@ if($action == "loggedout" || $action == "") {
 
 }
 
-<<<<<<< HEAD
 if($action == "upload") {
 	   
 }
 
-=======
->>>>>>> 408a784d91c98eb2fad97a3e327c64233cadc6d7
+
 
