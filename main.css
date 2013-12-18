@@ -1,0 +1,59 @@
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+          << RESET >>
+/////////////////////////////////*/
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, strong, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, figcaption, footer, header, hgroup, nav, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+	font-size: .625em;
+}
+
+body {
+	font-size: 1.6em;
+	font-family: 'HelveticaNeue-Light', Helvetica, Arial, sans-serif;
+	color: slategrey;
+}
+
+.wrap {
+	width: 960px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 2.8em;
+}
+
+h2 {
+	font-size: 2.4em;
+}
+
+h3 {
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 1.8em;
+}
+
+h5, h6 {
+	font-size: 1.4em;
+}
+
+#registration {
+	float: left;
+	width: 600px;
+	margin-right: 35px;
+}
+
+#loginForm {
+	float: left;
+	width: 280px;
+	border-left: 1px dotted slategray;
+	padding: 20px;
+}
