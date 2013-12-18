@@ -2,6 +2,10 @@
 	<form name="uploadForm" action="upload" method="post" id="uploadForm">
 		<p>
 			<label for="photoTitle">Title:</label>
+			<input type="text" name="photoTitle" id="photoTitle">
+		</p>
+
+		<p>
 			<input type="file" id="uploadPic" name="uploadPic">
 		</p>
 
