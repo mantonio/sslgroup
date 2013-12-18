@@ -1,3 +1,11 @@
+<?
+foreach($data as $par){ }
+
+
+?>
+
+<p>Welcome, <?= $par["username"] ?></p>
+
 <section>
 	<form name="uploadForm" action="?action=upload" method="post" id="uploadForm">
 		<p>

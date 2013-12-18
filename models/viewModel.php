@@ -6,10 +6,8 @@
  * Time: 2:10 PM
  */
 
-	class viewModel {
-
-		function getView($file = "", $data = array()) {
-			include $file;
-		}
-
+class viewModel {
+	function getView($file = "", $data = '') {
+		include $file;
 	}
+}
