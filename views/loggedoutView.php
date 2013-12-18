@@ -1,5 +1,6 @@
 <section id="registration">
 	<form name="register" id="register" method="post" action="?action=register">
+		<h2>User Registration</h2>
 		<p>
 			<label for="regUser">Username:</label>
 			<input id="regUser" name="regUser" type="text">
@@ -16,6 +17,14 @@
 		</p>
 
 		<p>
+			<label for="captchatxt">Captcha:</label>
+		<div id="captcha">
+			<img id="captchaImg" src="captcha.php" />
+			<input type="text" id="captchatxt" name="captchatxt">
+		</div>
+		</p>
+
+		<p>
 			<input id="regBtn" name="regBtn" value="Register" type="submit">
 		</p>
 		
@@ -24,6 +33,7 @@
 
 <aside id="loginForm">
 	<form name="login" id="login" method="post" action="?action=login">
+		<h2>User Login</h2>
 		<p>
 			<label for="username">Username:</label>
 			<input id="username" name="username" type="text">

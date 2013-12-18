@@ -10,6 +10,8 @@ require_once "models/userModel.php";
 require_once "models/viewModel.php";
 require_once "models/photoModel.php";
 
+$view = new viewModel();
+
 if(isset($_GET["action"])) {
 
 	$action = $_GET["action"];
@@ -23,5 +25,9 @@ if(isset($_GET["action"])) {
 // ----- HEADER ----- \\
 $view->getView("views/headerView.php");
 
+if($action == "loggedout" || $action == "") {
 
+	$view->getView("views/loggedoutView.php");
+
+}
 
