@@ -32,10 +32,6 @@ if($action == "loggedout" || $action == "") {
 	
 	$view->getView("views/loggedoutView.php");
 
-}elseif($action == "register" || $action == "login") {
-
-	$view->getView("views/loggedinView.php");
-
 }elseif($action == "upload") {
 
 	$photo->submit();
