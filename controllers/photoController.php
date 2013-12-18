@@ -20,13 +20,9 @@ $sql = new sql();
 
 
 if(isset($_GET["action"])) {
-
 	$action = $_GET["action"];
-
 }else {
-
 	$action = "loggedout";
-
 }
 
 // ----- HEADER ----- \\
@@ -43,6 +39,8 @@ if($action == "loggedout" || $action == "") {
 }elseif($action == "upload") {
 
 	$photo->submit();
+
+}elseif($action == "register") {
 
 	$un = $_POST["regUser"];
 	$pun = '/^[a-zA-Z0-9]+$/';
@@ -64,6 +62,26 @@ if($action == "loggedout" || $action == "") {
 		$_SESSION["username"] = $_POST["regUser"];
 		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
 	}
->>>>>>> cc9444aaceb50a278aa2db0e7a02ae7fd50575b2
+
+}elseif($action == "login") {
+	$un = $_POST["username"];
+	$pun = '/^[a-zA-Z0-9]+$/';
+	
+	$pw = $_POST["password"];
+	$ppw = '/^[a-zA-Z0-9]+$/';
+
+	if(!preg_match($pun, $un)){
+		$view->getView("views/loggedoutView.php");
+		echo "Please check input fields and try again";
+	}else if(!preg_match($ppw, $pw)){
+		$view->getView("views/loggedoutView.php");
+		echo "Please check input fields and try again";
+	}else{
+		$view->getView("views/loggedinView.php");
+		$_SESSION["username"] = $_POST["regUser"];
+		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
+	}
+
 }
+
 

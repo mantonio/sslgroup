@@ -31,5 +31,5 @@
 	$white = imagecolorallocate($image, 255, 255, 255);
 	$font_size = 5;
 
-	imagestring($image, $font_size, 5, 5, $text[$rand], $white);
+	imagestring($image, $font_size, 5, 5, $_SESSION["captchatxt"], $white);
 	imagejpeg($image, null, 80);
