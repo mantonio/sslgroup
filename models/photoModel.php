@@ -21,7 +21,9 @@
 					$st = $db->prepare($sql);
 					$st->execute(array(":userid"=>$userid, ":photoName"=>$photoName));
 
-					mkdir("images/".$userid);
+                    if (!is_dir("../images/")) {
+					    mkdir("../images/".$userid, 0777);
+				    }
 
 					$photo = "images/th_".$_FILES["photo"]["name"];
 
