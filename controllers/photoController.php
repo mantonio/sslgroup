@@ -11,6 +11,7 @@ require_once "models/viewModel.php";
 require_once "models/photoModel.php";
 
 $view = new viewModel();
+$photo = new photoModel();
 
 if(isset($_GET["action"])) {
 
@@ -32,6 +33,10 @@ if($action == "loggedout" || $action == "") {
 }elseif($action == "register" || $action == "login") {
 
 	$view->getView("views/loggedinView.php");
+
+}elseif($action == "upload") {
+
+	$photo->submit();
 
 }
 
