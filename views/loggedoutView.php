@@ -1,5 +1,5 @@
 <?
-foreach($data as $par){ }
+foreach($data as $par){ } 
 ?>
 
 <div class="wrap">
