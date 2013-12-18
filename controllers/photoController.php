@@ -13,16 +13,16 @@ require_once "models/photoModel.php";
 require_once "models/sqlModel.php";
 
 $view = new viewModel();
+
+$photo = new photoModel();
+
 $sql = new sql();
 
+
 if(isset($_GET["action"])) {
-
 	$action = $_GET["action"];
-
 }else {
-
 	$action = "loggedout";
-
 }
 
 // ----- HEADER ----- \\
@@ -32,7 +32,12 @@ if($action == "loggedout" || $action == "") {
 	
 	$view->getView("views/loggedoutView.php");
 
-}elseif($action == "register" || $action == "login") {
+}elseif($action == "upload") {
+
+	$photo->submit();
+
+}elseif($action == "register") {
+
 	$un = $_POST["regUser"];
 	$pun = '/^[a-zA-Z0-9]+$/';
 	
@@ -53,10 +58,33 @@ if($action == "loggedout" || $action == "") {
 		$_SESSION["username"] = $_POST["regUser"];
 		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
 	}
+
+}elseif($action == "login") {
+	$un = $_POST["username"];
+	$pun = '/^[a-zA-Z0-9]+$/';
+	
+	$pw = $_POST["password"];
+	$ppw = '/^[a-zA-Z0-9]+$/';
+
+	if(!preg_match($pun, $un)){
+		$view->getView("views/loggedoutView.php");
+		echo "Please check input fields and try again";
+	}else if(!preg_match($ppw, $pw)){
+		$view->getView("views/loggedoutView.php");
+		echo "Please check input fields and try again";
+	}else{
+		$view->getView("views/loggedinView.php");
+		$_SESSION["username"] = $_POST["regUser"];
+		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
+	}
+
 }
 
+<<<<<<< HEAD
 if($action == "upload") {
 	   
 }
 
+=======
+>>>>>>> 408a784d91c98eb2fad97a3e327c64233cadc6d7
 
