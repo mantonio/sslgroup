@@ -1,5 +1,5 @@
 <section>
-	<form name="uploadForm" action="upload" method="post" id="uploadForm">
+	<form name="uploadForm" action="?action=upload" method="post" id="uploadForm">
 		<p>
 			<label for="photoTitle">Title:</label>
 			<input type="text" name="photoTitle" id="photoTitle">

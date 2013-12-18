@@ -55,3 +55,8 @@ if($action == "loggedout" || $action == "") {
 	}
 }
 
+if($action == "upload") {
+	   
+}
+
+
