@@ -1,7 +1,5 @@
 <?
 foreach($data as $par){ }
-
-
 ?>
 
 <div class="wrap">
