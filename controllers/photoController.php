@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: matt
- * Date: 12/18/13
- * Time: 2:09 PM
- */
+
 session_start();
 
 require_once "models/userModel.php";
@@ -36,6 +31,8 @@ if($action == "loggedout" || $action == "") {
 
 	$photo->submit();
 
+	$view->getView("views/loggedinView.php");
+
 }elseif($action == "register") {
 
 	$un = $_POST["regUser"];
@@ -54,7 +51,9 @@ if($action == "loggedout" || $action == "") {
 		$view->getView("views/loggedoutView.php");
 		echo "Please check input fields and try again";
 	}else{
-		$view->getView("views/loggedinView.php");
+		$id = $_POST["userId"];
+		$photos["data"] = $photo->getPhotos($id);
+		$view->getView("views/loggedinView.php", $photos);
 		$_SESSION["username"] = $_POST["regUser"];
 		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
 	}
@@ -73,7 +72,9 @@ if($action == "loggedout" || $action == "") {
 		$view->getView("views/loggedoutView.php");
 		echo "Please check input fields and try again";
 	}else{
-		$view->getView("views/loggedinView.php");
+		$id = $_POST["userId"];
+		$photos["data"] = $photo->getPhotos($id);
+		$view->getView("views/loggedinView.php", $photos);
 		$_SESSION["username"] = $_POST["regUser"];
 		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
 	}

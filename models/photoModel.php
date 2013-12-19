@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: matt
- * Date: 12/18/13
- * Time: 2:10 PM
- */
 
 	class photoModel {
 		function submit() {
@@ -70,6 +64,23 @@
 				imagecopyresampled($cont,$n,0,0,0,0,$w,$h,$orgw,$orgh);
 				imagejpeg($cont,$newfile,100);
 				imagedestroy($n);
+
+			}
+
+			function getPhotos($id) {
+
+				$userid = $id;
+
+				$db = new PDO("mysql:hostname=localhost;dbname=PicBlog_Day9","root","root");
+
+				$sql = "SELECT * FROM photos WHERE userid=$userid";
+
+				$st = $db->prepare($sql);
+				$st->execute();
+
+				$photos = $st->fetchAll();
+
+				return $photos;
 
 			}
 
