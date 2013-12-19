@@ -9,7 +9,7 @@ class sql{
 	}
 	public function getid($username = ''){
 		$db = new PDO("mysql:hostname=localhost; dbname=PicBlog_Day9", "root","root");
-		$sql = "select * 
+		$sql = "select userid 
 				from users 
 				where username = :username";
 		$st = $db->prepare($sql);

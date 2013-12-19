@@ -38,7 +38,7 @@ foreach($data as $par){ }
 	</section>
 
 	<aside id="loginForm">
-		<form name="login" id="login" method="post" action="?action=login&id=<?=$par["userid"]?>">
+		<form name="login" id="login" method="post" action="?action=login">
 			<h2>User Login</h2>
 			<p>
 				<label for="username">Username:</label>

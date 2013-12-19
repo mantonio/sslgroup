@@ -66,16 +66,18 @@ if($action == "loggedout" || $action == "") {
 	
 	$_SESSION["username"] = $_POST["username"];
 	$username = $_SESSION["username"];
-	$uname = $sql->getid($username);
+	$userid = $sql->getid($username);
+
+	var_dump($userid);
 	
 	$test = $userModel->checkUser($data);
 	$msg = "Invalid Login";
 	
 	if($test == 1){
-		$id = $_POST["userId"];
+		$id = $userid;
 		$photos["data"] = $photo->getPhotos($id);
 		
-		$view->getView("views/loggedinView.php",$uname,$photos);
+		$view->getView("views/loggedinView.php",$id,$photos);
 	}else{
 		$view->getView("views/loggedoutView.php");
 		echo $msg;
