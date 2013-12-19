@@ -18,7 +18,7 @@ class sql{
 	}
 	public function getUsername($userid = ''){
 		$db = new PDO("mysql:hostname=localhost; dbname=PicBlog_Day9", "root","root");
-		$sql = "select * from users where userid = :userid";
+		$sql = "select username from users where userid = :userid";
 		$st = $db->prepare($sql);
 		$st->execute(array(":userid"=>$userid));
 		return $st->fetchAll();
@@ -36,10 +36,10 @@ class sql{
 	
 	public function add($username='',$email='',$password=''){
 		$db = new PDO("mysql:hostname=localhost; dbname=PicBlog_Day9", "root","root");
-		$sql = "insert into users(username,email,password)
-				values(:username,:email,:password)";
+		$sql = "insert into users(username,password,email)
+				values(:username,:password,:email)";
 		$st = $db->prepare($sql);
-		$st->execute(array(":username"=>$username,":email"=>$email,":password"=>$password));
+		$st->execute(array(":username"=>$username,":password"=>$password,":email"=>$email));
 	}
 	
 	public function delete($userid=''){

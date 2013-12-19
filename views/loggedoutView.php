@@ -1,6 +1,5 @@
 <?
-
-
+foreach($data as $par){ } 
 ?>
 
 <div class="wrap">
@@ -39,7 +38,7 @@
 	</section>
 
 	<aside id="loginForm">
-		<form name="login" id="login" method="post" action="?action=login">
+		<form name="login" id="login" method="post" action="?action=login&id=<?=$par["userid"]?>">
 			<h2>User Login</h2>
 			<p>
 				<label for="username">Username:</label>
