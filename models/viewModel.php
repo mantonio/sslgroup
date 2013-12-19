@@ -7,7 +7,7 @@
  */
 
 class viewModel {
-	function getView($file = "", $data = '') {
+	function getView($file = "", $data = '', $photos='') {
 		include $file;
 	}
 }

@@ -6,7 +6,7 @@ foreach($data as $par){ }
 	<section id="registration">
 		<form name="register" id="register" method="post" action="?action=register">
 			<h2>User Registration</h2>
-			<input type="hidden" name="userId" id="userId" value=""
+			<input type="hidden" name="userId" id="userId" value="" />
 			<p>
 				<label for="regUser">Username:</label>
 				<input id="regUser" name="regUser" type="text">

@@ -53,13 +53,9 @@ if($action == "loggedout" || $action == "") {
 		$view->getView("views/loggedoutView.php");
 		echo "Please check input fields and try again";
 	}else{
-<<<<<<< HEAD
 		$id = $_POST["userId"];
 		$photos["data"] = $photo->getPhotos($id);
-		$view->getView("views/loggedinView.php", $photos);
-=======
-		$view->getView("views/loggedinView.php",$data);
->>>>>>> ea4d7cdcd88efce8282fb21d47da9a12b3cee8fb
+		$view->getView("views/loggedinView.php",$data,$photos);
 		$_SESSION["username"] = $_POST["regUser"];
 		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
 	}
@@ -76,18 +72,13 @@ if($action == "loggedout" || $action == "") {
 	$msg = "Invalid Login";
 	
 	if($test == 1){
-		$view->getView("views/loggedinView.php",$uname);
-	}else{
-<<<<<<< HEAD
 		$id = $_POST["userId"];
 		$photos["data"] = $photo->getPhotos($id);
-		$view->getView("views/loggedinView.php", $photos);
-		$_SESSION["username"] = $_POST["regUser"];
-		$sql->add($_POST["regUser"],$_POST["regPass"],$_POST["email"]);
-=======
+		
+		$view->getView("views/loggedinView.php",$uname,$photos);
+	}else{
 		$view->getView("views/loggedoutView.php");
 		echo $msg;
->>>>>>> ea4d7cdcd88efce8282fb21d47da9a12b3cee8fb
 	}
 }
 
